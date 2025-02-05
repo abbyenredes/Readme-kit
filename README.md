@@ -36,7 +36,7 @@ Te voy a enseñar 2 formas de hacer títulos y subtitulos
 Siguiendo la linea de las letras vamos con los tipos de letras que podemos emplear:
 
 > **Negrita**
->> `**Negrita*`
+>> `**Negrita**`
 >
 > *Cursiva*
 >> `*cursiva*`
