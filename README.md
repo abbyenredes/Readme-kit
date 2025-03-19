@@ -530,6 +530,7 @@ Vamos a resumirlo aun más
 ## Documenta una API:
 Ahora te enseñare la estructura que use para documentar una API, si deseas visualizarla visita [API-Track_Truck](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/main/README.md)
 
+----
 # Nombre de tu API
 <details>
   <summary>¿Que voy a encontrarme?</summary>
@@ -656,23 +657,23 @@ Parámetros requeridos (Formulario o JSON)
     "password1": "ContraseñaSegura123",
     "password2": "ContraseñaSegura123",
     "email": "usuario@example.com",
-    "user_type": "company"  // Opciones: "company" o "driver"
+    "user_type": "x" 
 }
 ```
 
 > [!NOTE] [Algo puntual que tener encuenta a la hora de usar tu API]
 > Flujo de redirección: 
 > 
-> * Si el usuario se registra como empresa → Redirige a companies:create_company_form
+> * Si el usuario se registra como x → Redirige a x:create_x_form
 >  
-> * Si el usuario se registra como conductor → Redirige a drivers:create_driver_form
+> * Si el usuario se registra como y → Redirige a y:create_y_form
 
 
 Ejemplo de respuesta (`200 OK`) ✔️ [Para conocer si esta todo correcto]
 ```json
 {
     "message": "Usuario registrado correctamente",
-    "redirect": "/companies/create/"
+    "redirect": "/x/create/"
 }
 
 ```
@@ -682,628 +683,264 @@ Ejemplo de posibles errores: [Para conocer de antemano errores comunes en tu API
 (`400 Bad Request`) si las contraseñas no coinciden o faltan datos. ❌
 
 ---
-### Inicio de sesión
-Permite a los usuarios iniciar sesión con sus credenciales.
+`Todo es igual hasta que llegamos a esta excepción en caso de que no sea tan intuitivo`
 
-Endpoint: POST /api/auth/login/
+## [Excepción DELETE]
+Borra y del sistema.
 
-Parámetros requeridos (Formulario o JSON):
-```json
-{
-    "email": "usuario123@user.com",
-    "password": "ContraseñaSegura123"
-}
-```
-
-Ejemplo de respuesta (200 OK). ✔️
-```json
-{
-    "message": "Inicio de sesión exitoso",
-    "redirect": "/home"
-}
-
-```
-
-![login](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/dev/static/images/login-md.gif)
-
-> Ejemplo de posibles errores ❌ :
-> > `401 Unauthorized` si las credenciales son incorrectas.
-> > 
-> > `400 Bad Request` si faltan datos.
----
-### Cierre de sesión
-Cierra la sesión del usuario y lo redirige a la página de inicio de sesión.
-
-Endpoint: GET /users/logout/
-
-Ejemplo de respuesta (`302 Redirect`)
-
-(Redirige a [/users/login/](/users/login/))
-
----
-
-> [!NOTE]
->
-> Se utilizan formularios personalizados:
-> 
-> * CustomUserCreationForm para el registro.
-> 
-> * CustomAuthenticationForm para el inicio de sesión.
-> 
-> Se usa auth_login y auth_logout de Django para manejar sesiones.
-> 
-> Se redirige a diferentes vistas según el tipo de usuario registrado.
-
----
-
-## 🔹 Gestión de Empresas
----
-### Obtener todas las empresas
-Obtiene una lista de todas las empresas registradas.
-
-Endpoint: GET /companies/
-
-Ejemplo de respuesta (`200 OK`). ✔️
-```json
-[
-    {
-        "id": 1,
-        "name": "Empresa XYZ",
-        "email": "contacto@xyz.com",
-        "phone": "+123456789",
-        "user_id": 101
-    },
-    {
-        "id": 2,
-        "name": "Empresa ABC",
-        "email": "info@abc.com",
-        "phone": "+987654321",
-        "user_id": 102
-    }
-]
-```
----
-### Crear una empresa
-Crea una nueva empresa en el sistema.
-
-Endpoint: POST /companies/create/
-
-Parámetros requeridos (JSON)
-```json
-{
-    "user_id": 101,
-    "name": "Empresa XYZ",
-    "email": "contacto@xyz.com",
-    "phone": "+123456789"
-}
-```
-
-Ejemplo de respuesta (`201 Created`). ✔️
-```json
-{
-    "id": 1,
-    "user_id": 101,
-    "name": "Empresa XYZ",
-    "email": "contacto@xyz.com",
-    "phone": "+123456789"
-}
-```
-Ejemplo de posibles errores (`400 Bad Request`) si falta el campo user_id. ❌
-```json
-{
-    "error": "user_id is required"
-}
-```
----
-### Obtener detalles de una empresa
-Obtiene los detalles de una empresa específica.
-
-Endpoint: GET /companies/{id}/detail/
-
-Ejemplo de respuesta (`200 OK`) ✔️
-```json
-{
-    "id": 1,
-    "user_id": 101,
-    "name": "Empresa XYZ",
-    "email": "contacto@xyz.com",
-    "phone": "+123456789"
-}
-```
-Ejemplo de posibles errores (`404 Not Found`) si la empresa no existe. ❌
-```json
-{
-    "detail": "Not found."
-}
-```
----
-### Actualizar una empresa
- Actualiza todos los datos de una empresa.
- 
- Endpoint: PUT /companies/{id}/update/
-
-Parámetros requeridos (JSON)
-```json
-{
-    "name": "Empresa Actualizada",
-    "email": "nuevo@email.com",
-    "phone": "+000000000",
-    "address": "Calle 123",
-    "user_id": 101
-}
-```
-
- Ejemplo de respuesta (`200 OK`) ✔️
- ```json
-{
-    "id": 1,
-    "user_id": 101,
-    "name": "Empresa Actualizada",
-    "email": "nuevo@email.com",
-    "phone": "+000000000",
-    "address": "Calle 123"
-}
-```
----
-### Actualización parcial de una empresa
-Permite actualizar solo algunos campos de la empresa.
-
-Endpoint: PATCH /companies/{id}/update/
-
-Ejemplo de petición (JSON)
-```json
-{
-    "phone": "+111111111"
-}
-```
-
-Ejemplo de respuesta (`200 OK`) ✔️
-```json
-{
-    "id": 1,
-    "user_id": 101,
-    "name": "Empresa XYZ",
-    "email": "contacto@xyz.com",
-    "phone": "+111111111"
-}
-```
----
-### Eliminar una empresa
-Elimina una empresa del sistema.
-
-Endpoint: DELETE /companies/{id}/delete/
-
-Ejemplo de respuesta (`204 No Content`) ✔️
-
-(No retorna contenido)
-
-Posibles errores:
-
-`404 Not Found` si la empresa no existe. ❌
-
----
-
-## Vistas HTML (Interfaz Web)
-1. Crear una empresa desde formulario
-URL: [create_companies_form/<int:user_id>/](create_companies_form/<int:user_id>/)
-Muestra un formulario para registrar una empresa.
-
-* Si la empresa se crea correctamente, redirige a home.
-* En caso de error, recarga la página con un mensaje de error.
-
-2. Dashboard de una empresa
-URL: [/companies/{id}/cp-dashboard/](/companies/{id}/cp-dashboard/)
-Muestra los detalles de una empresa y una lista de sus envíos.
-
-3. Actualizar empresa desde formulario
-URL: [/companies/{id}/cp-update/](/companies/{id}/cp-update/)
-Formulario para actualizar los datos de una empresa.
-
-![update_companies](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/dev/static/images/update-company-md.gif)
-
-* Si la actualización es exitosa, redirige al dashboard de la empresa.
-* Si hay un error, muestra un mensaje en la página.
-
-![]()
-
->[!NOTE]
-> * Se utiliza logging para registrar eventos (creación, actualización, eliminación, etc.).
->
-> * Se manejan fechas en formato YYYY-MM-DD HH:MM.
->
-> * La API usa requests para realizar llamadas internas a otros servicios.
-
---- 
-## 🔹Gestión de Conductores
----
-
-### Obtener todos los conductores
-Obtiene una lista de todos los conductores registrados.
-
-Endpoint: GET /drivers/
-
-Ejemplo de respuesta (`200 OK`). ✔️
-```json
-[
-    {
-        "id": 1,
-        "name": "Juan Pérez",
-        "truck_plate": "XYZ123",
-        "phone": "+123456789",
-        "user": 101
-    },
-    {
-        "id": 2,
-        "name": "Ana López",
-        "truck_plate": "ABC987",
-        "phone": "+987654321",
-        "user": 102
-    }
-]
-```
----
-
-### Crear un nuevo conductor
-Registra un nuevo conductor en el sistema.
-
-Endpoint: POST /drivers/create/
-
-Parámetros requeridos (JSON):
-```json
-{
-    "user": 101,
-    "name": "Juan Pérez",
-    "truck_plate": "XYZ123",
-    "phone": "+123456789"
-}
-```
-Ejemplo de respuesta (`201 Created`)
-```json
-{
-    "id": 1,
-    "user": 101,
-    "name": "Juan Pérez",
-    "truck_plate": "XYZ123",
-    "phone": "+123456789"
-}
-```
-Posibles errores ❌:
-
-`400 Bad Request` si los datos son incorrectos.
-
----
-
-### Obtener detalles de un conductor
-Obtiene la información de un conductor específico.
-
-Endpoint: GET /drivers/{id}/detail/
-
-Ejemplo de respuesta (`200 OK`). ✔️
-```json
-{
-    "id": 1,
-    "user": 101,
-    "name": "Juan Pérez",
-    "truck_plate": "XYZ123",
-    "phone": "+123456789"
-}
-```
-Posibles errores `404 Not Found` si el conductor no existe. ❌
-```json
-{
-    "detail": "Not found."
-}
-```
----
-
-### Actualizar un conductor
- Modifica todos los datos de un conductor.
-
- Endpoint: PUT /drivers/{id}/update/
-
- Parámetros requeridos (JSON):
- ```json
-{
-    "name": "Juan Pérez",
-    "truck_plate": "XYZ789",
-    "phone": "+000000000",
-    "user": 101
-}
-```
-
-Ejemplo de respuesta (`200 OK`) ✔️
-```json
-{
-    "id": 1,
-    "user": 101,
-    "name": "Juan Pérez",
-    "truck_plate": "XYZ789",
-    "phone": "+000000000"
-}
-```
-
----
-
-### Eliminar un conductor
-Borra un conductor del sistema.
-
-Endpoint: DELETE /drivers/{id}/delete/
+Endpoint: DELETE /y/{id}/delete/
 
 Ejemplo de respuesta (`204 No Content`)
 
 (No retorna contenido)
 
-Posibles errores `404 Not Found` si el conductor no existe. ❌
+Posibles errores `404 Not Found` si y no existe. ❌
 
 ---
 
-### Vistas HTML (Interfaz Web)
-1. Crear un conductor desde formulario
-URL: [create_driver_form/<int:user_id>/](create_driver_form/<int:user_id>/)
-Muestra un formulario para registrar un conductor.
+### Vistas HTML (Interfaz Web) [Como no retorna nada es una buena práctica describir que pasa aquí]
+1. Crear un y desde formulario
+URL: [create_y_form/<int:user_id>/](y_form/<int:user_id>/)
+Muestra un formulario para registrar y.
 
-* Si el conductor se crea correctamente, redirige a home.
+* Si y se crea correctamente, redirige a home.
 * En caso de error, recarga la página con un mensaje de error.
   
-2. Dashboard de un conductor
-URL: [/drivers/{id}/dr-dashboard/](/drivers/{id}/dr-dashboard/)
-Muestra los detalles de un conductor y una lista de sus envíos.
+2. Dashboard de y
+URL: [/y/{id}/dr-dashboard/](/y/{id}/dr-dashboard/)
+Muestra los detalles de y.
 
-3. Actualizar conductor desde formulario
-URL: [/drivers/{id}/dr-update/](/drivers/{id}/dr-update/)
-Formulario para actualizar los datos de un conductor.
+3. Actualizar y desde formulario
+URL: [/y/{id}/dr-update/](/y/{id}/dr-update/)
+Formulario para actualizar los datos de y.
 
-* Si la actualización es exitosa, redirige al dashboard del conductor.
+* Si la actualización es exitosa, redirige al dashboard de y.
 * Si hay un error, muestra un mensaje en la página.
 
-![update-drivers](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/dev/static/images/update-driver-md.gif)
+![aqui va un gif de tu html]()
 
 > [!NOTE]
-> * Se utiliza requests para hacer llamadas a la API desde las vistas HTML.
->   
-> * Se manejan fechas en formato YYYY-MM-DD HH:MM.
->   
-> * La API devuelve errores detallados en caso de problemas con las solicitudes.
+> [Algo relevante sobre esto]
 
-## 🔹Gestión de Envíos
 ---
 
-### Crear un envío
-Crea un nuevo envío con los datos proporcionados.
+## 🤝 Contribución  
 
-Endpoint: POST /shipments-add/
+¡Las contribuciones son bienvenidas! Para contribuir:  
 
-Parámetros requeridos (JSON):
-```json
+1. Haz un fork del repositorio.
+   
+3. Crea una nueva rama:
+    
+   ```sh
+   git checkout -b feature/nueva-funcionalidad
+   ```
+   
+4. Realiza tus cambios y haz commit:
+   
+  ```sh
+git commit -m "Añadir nueva funcionalidad"
+```
+
+4. Envía un pull request 🚀.
+   
+----
+
+## 🚀 ¡Gracias por usar Track-Truck! Si tienes preguntas, crea un issue en el repositorio o contáctanos.
+
+Te comparto la plantilla:
+
+````
+# Nombre de tu API
+<details>
+  <summary>¿Que voy a encontrarme?</summary>
+  <ol>
+    <li>
+      <a href="#¿Qué-es-tu-API?">¿Qué es tu API?</a>
+      <ul>
+        <li><a href="#Características"> Características</a></li>
+      </ul>
+    </li>
+    <li><a href="#Tecnologías-Utilizadas">Tecnologías Utilizadas</a></li>
+    <li><a href="#Instalación-y-Configuración">Instalación y Configuración</a></li>
+    <li>
+        <a href="#Uso-de-la-API">Uso de la API</a>
+    <ul>
+        <li><a href="#uso 1">uso 1</a></li>
+        <li><a href="#uso 2">uso 2</a></li>
+      </ul>
+    </li>
+     <li><a href="#Contribución">Contribución</a></li>
+  </ol>
+</details>
+
+
+## ¿Qué es tu API?
+
+[Describe que hace tu API]
+
+### 🌟 Características
+
+✅ característica 1
+
+✅  característica 2
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+> [!IMPORTANT]
+> 
+> Utiliza badges para hacerlo mas visual te dejo este repositorio que las tiene [markdown-badges](https://github.com/Ileriayo/markdown-badges/blob/master/README.md)
+
+- **Backend:** ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+- **Base de Datos:** ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+- **Frontend:** ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- **Entorno Virtual:**  `.env` para configuración segura
+
+---
+
+## 🚀 Instalación y Configuración
+
+### 1️⃣ Clonar el repositorio y entrar
+
+```textplain
+git clone https://github.com/tu-API
+cd tu-API
+```
+
+### 2️⃣ Descarga el entorno virtual: [Es importante que pongas los distintos sistemas operativos]
+⚠️ linux/mac
+```textplain
+python3 -m venv .venv
+```
+⚠️ windows
+```texrplain
+python -m venv .venv
+```
+
+### 3️⃣ Inicia el entorno virtual:
+⚠️ linux/mac
+```textplain
+source .venv/bin/activate
+```
+⚠️ windows
+```textplain
+.venv\Scripts\activate
+```
+
+### 4️⃣ Descarga las siguientes dependencias:
+```textplain
+uv pip install -r requirements.txt
+```
+### 5️⃣ Configura variables de entorno
+Crea el archivo .env en la raíz y configura las siguiente variables:
+
+```textplain
+SECRET_KEY="tu_clave_secreta"
+DEBUG=True
+DATABASE_URL="postgres://usuario:contraseña@localhost:5432/nombre_db"
+```
+### 6️⃣ Accede a nuestra API:
+
+```textplain
+python manage.py runserver
+```
+> [!IMPORTANT]
+> La API estará disponible en [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+## 📌 Uso de la API
+---
+> [!NOTE]
+> Si quieres ver esto de forma más visual visita:
+>
+> Swagger UI: http://localhost:8000/docs/
+> 
+> ![docs]() [Aquí va una imagen o gif]
+> 
+> Redoc UI: http://localhost:8000/redoc/
+> 
+>  ![redoc]() [Aquí va una imagen o gif]
+
+
+## 🔹 Uso 1
+---
+### [Escribe que es: Registro de usuario]
+[Describe que hace: Permite a los usuarios registrarse en la plataforma.]
+
+Endpoint: [¿Que método usa?: POST /users/signin/]
+
+Parámetros requeridos (Formulario o JSON)
+```json [¿Qué datos necesita para funcionar?]
 {
-   "company_id": 1,
-    "driver_id": null,
-    "origin": "Madrid",
-    "destination": "Barcelona",
-    "status": "pending"
+    "username": "usuario123",
+    "password1": "ContraseñaSegura123",
+    "password2": "ContraseñaSegura123",
+    "email": "usuario@example.com",
+    "user_type": "x" 
 }
 ```
 
-Ejemplo de respuesta (`200 OK`). ✔️
+> [!NOTE] [Algo puntual que tener encuenta a la hora de usar tu API]
+> Flujo de redirección: 
+> 
+> * Si el usuario se registra como x → Redirige a x:create_x_form
+>  
+> * Si el usuario se registra como y → Redirige a y:create_y_form
+
+
+Ejemplo de respuesta (`200 OK`) ✔️ [Para conocer si esta todo correcto]
 ```json
 {
-    "id": 10,
-    "company_id": 1,
-    "driver_id": null,
-    "origin": "Madrid",
-    "destination": "Barcelona",
-    "status": "pending",
-    "created_at": "2024-06-01T12:00:00Z"
+    "message": "Usuario registrado correctamente",
+    "redirect": "/x/create/"
 }
+
 ```
 
-![create-shipment](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/dev/static/images/create-shipment-md.gif)
+Ejemplo de posibles errores: [Para conocer de antemano errores comunes en tu API]
 
-Posibles errores:
-`400 Bad Request` si los datos son inválidos o faltan parámetros requeridos. ❌
+(`400 Bad Request`) si las contraseñas no coinciden o faltan datos. ❌
+
+---
+`Todo es igual hasta que llegamos a esta excepción en caso de que no sea tan intuitivo`
+
+## [Excepción DELETE]
+Borra y del sistema.
+
+Endpoint: DELETE /y/{id}/delete/
+
+Ejemplo de respuesta (`204 No Content`)
+
+(No retorna contenido)
+
+Posibles errores `404 Not Found` si y no existe. ❌
 
 ---
 
-### Obtener la lista de envíos
-Devuelve una lista de todos los envíos.
+### Vistas HTML (Interfaz Web) [Como no retorna nada es una buena práctica describir que pasa aquí]
+1. Crear un y desde formulario
+URL: [create_y_form/<int:user_id>/](y_form/<int:user_id>/)
+Muestra un formulario para registrar y.
 
-Endpoint: GET /shipments/list/
+* Si y se crea correctamente, redirige a home.
+* En caso de error, recarga la página con un mensaje de error.
+  
+2. Dashboard de y
+URL: [/y/{id}/dr-dashboard/](/y/{id}/dr-dashboard/)
+Muestra los detalles de y.
 
-Ejemplo de respuesta (`200 OK`). ✔️
-```json
-[
-    {
-        "id": 1,
-        "company_id": 2,
-        "driver_id": 5,
-        "origin": "Sevilla",
-        "destination": "Valencia",
-        "status": "in_progress"
-    },
-    {
-        "id": 2,
-        "company_id": 3,
-        "driver_id": null,
-        "origin": "Madrid",
-        "destination": "Bilbao",
-        "status": "pending"
-    }
-]
-```
-Posibles errores: `400 Bad Request` en caso de fallo inesperado en la consulta. ❌
+3. Actualizar y desde formulario
+URL: [/y/{id}/dr-update/](/y/{id}/dr-update/)
+Formulario para actualizar los datos de y.
 
----
+* Si la actualización es exitosa, redirige al dashboard de y.
+* Si hay un error, muestra un mensaje en la página.
 
-### Obtener envíos de una empresa
-Devuelve los envíos pertenecientes a una empresa específica.
-
-Endpoint: GET /shipments/{id}/co-shipments/
-
-Parámetros de la URL:
-
-`company_id`: ID de la empresa.
-
-Ejemplo de respuesta (200 OK). ✔️
-```json
-[
-    {
-        "id": 5,
-        "company_id": 3,
-        "driver_id": 7,
-        "origin": "Barcelona",
-        "destination": "Madrid",
-        "status": "completed"
-    }
-]
-```
-
-Posibles errores: ❌
-
-* `404 Not Found` si la empresa no tiene envíos.
-* `400 Bad Request` en caso de error interno.
----
-
-### Obtener envíos asignados a un conductor
-Devuelve los envíos asignados a un conductor.
-
-Endpoint: GET /shipments/{id}/dr-shipments
-
-Parámetros de la URL:
-
-`driver_id`: ID del conductor.
-
-Ejemplo de respuesta (`200 OK`). ✔️
-```json
-[
-    {
-        "id": 6,
-        "company_id": 1,
-        "driver_id": 2,
-        "origin": "Zaragoza",
-        "destination": "Málaga",
-        "status": "in_progress"
-    }
-]
-```
-
-Posibles errores: ❌
-
-* `404 Not Found` si el conductor no tiene envíos asignados.
-* `400 Bad Request` en caso de error interno.
-
----
-
-### Actualizar un envío
-Actualiza la información de un envío existente.
-
-Endpoint: PUT /shipments/update/
-
-Parámetros requeridos (JSON):
-```json
-{
-    "id": 10,
-    "status": "completed",
-    "finished_at": "2025-03-11T20:00:00Z"
-}
-```
-
-Ejemplo de respuesta (`200 OK`). ✔️
-```json
-{
-    "id": 10,
-    "company_id": 1,
-    "driver_id": 2,
-    "status": "completed",
-    "created_at": "2025-03-10T12:00:00Z",
-    "finished_at": "2025-03-11T20:00:00Z",
-    "origin": "Ciudad A",
-    "destination": "Ciudad B"
-}
-```
-
-Posibles errores: `400 Bad Request` si los datos son inválidos o falta el ID del envío. ❌
-
----
-
-### Obtener envíos sin conductor asignado
-Devuelve los envíos que aún no tienen un conductor asignado.
-
-Endpoint: GET /shipments/without-driver/
-
-Ejemplo de respuesta (`200 ok`) ✔️
-```json
-[
-    {
-        "id": 3,
-        "company_id": 4,
-        "driver_id": null,
-        "origin": "Valencia",
-        "destination": "Madrid",
-        "status": "pending"
-    }
-]
-```
----
-
-### Asignar un conductor a un envío
-Permite a un conductor tomar un envío disponible.
-
-Endpoint: POST /shipments/assign-driver/{shipment_id}/
-
-Ejemplo de respuesta:
-```json
-{
-    "message": "Driver assigned successfully"
-}
-```
-
-### Actualizar un envío
-Actualiza los detalles de un envío.
-
-Endpoint: PUT /shipments/update/
-
-Ejemplo de solicitud:
-```json
-{
-    "id": 3,
-    "status": "completed"
-}
-```
-
-Ejemplo de respuesta:
-```json
-{
-    "id": 3,
-    "company_id": 4,
-    "driver_id": 2,
-    "origin": "Valencia",
-    "destination": "Madrid",
-    "status": "completed"
-}
-```
-![shipments-driver](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/dev/static/images/create-shipment-md.gif)
-
----
-
-### Eliminar un envío
-Elimina un envío si aún no tiene un conductor asignado.
-
-Endpoint: DELETE /shipments/delete/{id}/
-
-Ejemplo de respuesta (`200 OK`)
-```json
-{
-    "message": "Shipment deleted"
-}
-```
-Posibles errores: `400 Bad Request` si ocurre un error durante la eliminación. ❌
-
----
+![aqui va un gif de tu html]()
 
 > [!NOTE]
-> * Los datos se manejan a través del serializador ShipmentSerializer.
->   
-> * Se implementan métodos HTTP estándar: POST (crear), GET (consultar), PUT (actualizar) y DELETE (eliminar).
+> [Algo relevante sobre esto]
 
 ---
 
