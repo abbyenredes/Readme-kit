@@ -8,11 +8,11 @@ Preparate para aprender todos mis secretos :stuck_out_tongue_winking_eye:, y sob
  	- <details> <summary>⬇️</summary>
  
     	- [Tipos de títulos](#tipos-de-títulos)
-     	- [Tipos de letra](#-tipos-de-letras)
-     	- [Tipos de índice](#-tipos-de-índice)
-     	- [Acerca del proyecto](#-acerca-del-proyecto)
-     	- [Estado del proyecto](#-estado-del-proyecto)
-      	- [Checklist](#-checklist)
+     	- [Tipos de letra](#tipos-de-letra)
+     	- [Tipos de índice](#tipos-de-índice)
+     	- [Acerca del proyecto](#acerca-del-proyecto)
+     	- [Estado del proyecto](#estado-del-proyecto)
+      	- [Checklist](#checklist)
       	- [CD](#-cd) 
 	 </details> 
 - [Table of contents](#table-of-contents)
