@@ -13,7 +13,10 @@ Preparate para aprender todos mis secretos :stuck_out_tongue_winking_eye:, y sob
      	- [Acerca del proyecto](#acerca-del-proyecto)
      	- [Estado del proyecto](#estado-del-proyecto)
       	- [Checklist](#checklist)
-      	- [CD](#-cd) 
+      	- [CD](#-cd)
+      	- [CD](#-cd)
+      	- [CD](#-cd)  
+   
 	 </details> 
 - [Table of contents](#table-of-contents)
 - [Usage](#usage)
