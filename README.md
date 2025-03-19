@@ -529,7 +529,7 @@ Vamos a resumirlo aun más
 ---
 ## Documenta una API:
 Ahora te enseñare la estructura que use para documentar una API, si deseas visualizarla visita [API-Track_Truck](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/main/README.md)
-````
+
 # Nombre de tu API
 <details>
   <summary>¿Que voy a encontrarme?</summary>
@@ -559,17 +559,23 @@ Ahora te enseñare la estructura que use para documentar una API, si deseas visu
 [Describe que hace tu API]
 
 ### 🌟 Características
+
 ✅ característica 1
+
 ✅  característica 2
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Backend:** [badge]()
-- **Base de Datos:** [badge]()
-- **Frontend:** [badge]()
-- **Entorno Virtual:** [badge]()
+> [!IMPORTANT]
+> 
+> Utiliza badges para hacerlo mas visual te dejo este repositorio que las tiene [markdown-badges](https://github.com/Ileriayo/markdown-badges/blob/master/README.md)
+
+- **Backend:** ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+- **Base de Datos:** ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+- **Frontend:** ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- **Entorno Virtual:**  `.env` para configuración segura
 
 ---
 
