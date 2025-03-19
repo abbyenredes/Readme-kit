@@ -3,7 +3,38 @@ Esto esta hecho para ayudarte a crear un readme atractivo que llame la atención
 laborales o colaborativas.
 Preparate para aprender todos mis secretos :stuck_out_tongue_winking_eye:, y sobretodo preparate a documentar tus proyectos (será tu mickey-herramienta secreta) de una manera divertida.
 
-## Empecemos
+## Qué te vas a encontrar
+- [Kit básico](#-Kit-básico)
+ 	- <details> <summary>⬇️</summary>
+ 
+    	- [Tipos de títulos](#-Tipos-de-títulos)
+     	- [Tipos de letra](#-Tipos-de-letra)
+     	- [Tipos de índice](#-Tipos-de-índice)
+     	- [Acerca del proyecto](#-Acerca-del-proyecto)
+     	- [Estado del proyecto](#-Estado-del-proyecto)
+      	- [Checklist](#-Checklist)
+      	- [CD](#-cd) 
+	 </details> 
+- [Table of contents](#table-of-contents)
+- [Usage](#usage)
+- [Tips](#tips)
+- [Contribution](#contribution)
+- [License](#license)
+- [Badges](#badges)
+  - <details> <summary>List of badges</summary>
+ 
+     - [Artificial Intelligence and Bots](#-artificial-intelligence-and-bots)
+     - [Blog](#-blog)
+     - [Blockchain](#-blockchain)
+     - [Browsers](#-browsers)
+     - [CD](#-cd)
+       
+---
+## Kit básico
+Vamos a dividir nuestra documentación como si de una página web se tratase:
+
+----
+### Tipos de títulos
 Te voy a enseñar 2 formas de hacer títulos y subtitulos
 > markdown-style
 > # Título
@@ -44,9 +75,7 @@ Siguiendo la linea de las letras vamos con los tipos de letras que podemos emple
 > ***cursiva negrita***
 >> `***cursiva negrita***`
 
----
-## Kit básico
-Vamos a dividir nuestra documentación como si de una página web se tratase:
+### Centrar un título
 
 **Título:**
 
@@ -54,7 +83,9 @@ Vamos a dividir nuestra documentación como si de una página web se tratase:
 si lo queremos centrado:
 <h1 align="center"> Proyecto readme-kit</h1>
 
-Índice:
+### Tipos de índice
+
+**Estándar**
 
 - [Acerca del proyecto](#Acerca-del-proyecto)
   - [Estado del proyecto](#Estado-del-proyecto)
@@ -65,7 +96,8 @@ si lo queremos centrado:
 - [Pongamoslo a prueba](#Pongamoslo-a-prueba)
 - [Roadmap](#Roadmap)
 ---
-  Versión contraida
+**Versión contraida**
+
 <details>
   <summary>¿Que voy a encontrarme?</summary>
   <ol>
@@ -88,6 +120,24 @@ si lo queremos centrado:
   </ol>
 </details>
 
+**Hídrido**
+- [Acerca del proyecto](#Acerca-del-proyecto)
+  	- <details> <summary>⬇️</summary>
+ 
+     	- [Estado del proyecto](#-estado-del-proyecto)
+     	- [Mis herramientas](#-Mis-herramientas)
+  	     </details>
+- [Empecemos](#Empecemos)
+  	- <details> <summary>⬇️</summary>
+ 
+     	- [Checklist](#-Checklist)
+     	- [Mi paso a paso](#-Mi-paso-a-paso)
+  	     </details>
+- [Pongamoslo a prueba](#Pongamoslo-a-prueba)
+- [Roadmap](#Roadmap)
+
+> [!NOTE]
+> Te aconsejo usar el híbrido cuando tu documentación se bastante extensa.
 
 ## Acerca del proyecto
 Aquí me gusta describir de que va mi proyecto, escribir esta parte es fundamental ya que es el gancho para que se siga leyendo tu proyecto. Procura realizar una descripción enganchante, como buena experta en marketing te puedo recomendar el formato AIDA:
