@@ -528,7 +528,7 @@ Vamos a resumirlo aun más
 ```
 ---
 ## Documenta una API:
-Ahora te enseñare la estructura que use para documentar una API, si deseas visualizarla visita [API-Track_Truck]()
+Ahora te enseñare la estructura que use para documentar una API, si deseas visualizarla visita [API-Track_Truck](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/main/README.md)
 ````
 # Nombre de tu API
 <details>
@@ -636,15 +636,15 @@ python manage.py runserver
 >  ![redoc]() [Aquí va una imagen o gif]
 
 
-## 🔹 Autenticación
+## 🔹 Uso 1
 ---
-### Registro de usuario
-Permite a los usuarios registrarse en la plataforma.
+### [Escribe que es: Registro de usuario]
+[Describe que hace: Permite a los usuarios registrarse en la plataforma.]
 
-Endpoint: POST /users/signin/
+Endpoint: [¿Que método usa?: POST /users/signin/]
 
 Parámetros requeridos (Formulario o JSON)
-```json
+```json [¿Qué datos necesita para funcionar?]
 {
     "username": "usuario123",
     "password1": "ContraseñaSegura123",
@@ -654,15 +654,15 @@ Parámetros requeridos (Formulario o JSON)
 }
 ```
 
-> [!NOTE]
-> Flujo de redirección:
+> [!NOTE] [Algo puntual que tener encuenta a la hora de usar tu API]
+> Flujo de redirección: 
 > 
 > * Si el usuario se registra como empresa → Redirige a companies:create_company_form
 >  
 > * Si el usuario se registra como conductor → Redirige a drivers:create_driver_form
 
 
-Ejemplo de respuesta (`200 OK`) ✔️
+Ejemplo de respuesta (`200 OK`) ✔️ [Para conocer si esta todo correcto]
 ```json
 {
     "message": "Usuario registrado correctamente",
@@ -671,18 +671,10 @@ Ejemplo de respuesta (`200 OK`) ✔️
 
 ```
 
-![singin](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/dev/static/images/singin-md.gif)
-
-
-Ejemplo de posibles errores:
+Ejemplo de posibles errores: [Para conocer de antemano errores comunes en tu API]
 
 (`400 Bad Request`) si las contraseñas no coinciden o faltan datos. ❌
 
-> [!IMPORTANT]
-> (`400 Bad Request`) si se registra un usuario con el mismo email/username,  un driver con el mismo truck plate, una empresa con el mismo nombre.
-> Estas validaciones son personalizadas
-
-![user_exits](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/dev/static/images/user%20existe.png)
 ---
 ### Inicio de sesión
 Permite a los usuarios iniciar sesión con sus credenciales.
