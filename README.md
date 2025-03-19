@@ -461,12 +461,13 @@ Así es, esto no acaba porque nos queda lo más importante, compartir la plantil
 ¿Te parece muy largo?
 
 Vamos a resumirlo aun más
+
 > [!IMPORTANT]
 >
 > Si te ha sido util esta guía regalame una :star:.
 
 ```
-#
+# 
 
 <details>
   <summary>¿Que voy a encontrarme?</summary>
@@ -529,12 +530,12 @@ Vamos a resumirlo aun más
 ## Documenta una API:
 Ahora te enseñare la estructura que use para documentar una API, si deseas visualizarla visita [API-Track_Truck]()
 ````
-# Track-Truck 🚚
+# Nombre de tu API
 <details>
   <summary>¿Que voy a encontrarme?</summary>
   <ol>
     <li>
-      <a href="#¿Qué-es-Track-Truck?">¿Qué es Track Truck?</a>
+      <a href="#¿Qué-es-tu-API?">¿Qué es tu API?</a>
       <ul>
         <li><a href="#Características"> Características</a></li>
       </ul>
@@ -544,10 +545,8 @@ Ahora te enseñare la estructura que use para documentar una API, si deseas visu
     <li>
         <a href="#Uso-de-la-API">Uso de la API</a>
     <ul>
-        <li><a href="#Autenticación">Autenticación</a></li>
-        <li><a href="#Gestión-de-Empresas">Gestión de Empresas</a></li>
-         <li><a href="#Gestión-de-Conductores">Gestión de Conductores</a></li>
-        <li><a href="#Gestión-de-Envíos">Gestión de Envíos</a></li>
+        <li><a href="#uso 1">uso 1</a></li>
+        <li><a href="#uso 2">uso 2</a></li>
       </ul>
     </li>
      <li><a href="#Contribución">Contribución</a></li>
@@ -555,25 +554,22 @@ Ahora te enseñare la estructura que use para documentar una API, si deseas visu
 </details>
 
 
-## ¿Qué es Track Truck?
+## ¿Qué es tu API?
 
-API REST que conecta empresas con conductores para facilitar el transporte de mercancías.
-Permite a las empresas publicar rutas y a los conductores encontrar oportunidades de transporte.
+[Describe que hace tu API]
 
 ### 🌟 Características
-✅ Registro y autenticación de usuarios (empresas y conductores).  
-✅ Publicación y gestión de rutas de transporte.  
-✅ Asignación de rutas a conductores.  
-✅ Documentación interactiva con Swagger. 
+✅ característica 1
+✅  característica 2
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Backend:** Django REST Framework (DRF) + Python  
-- **Base de Datos:** PostgreSQL  
-- **Frontend:** HTML + CSS + Bootstrap 
-- **Entorno Virtual:** `.env` para configuración segura  
+- **Backend:** [badge]()
+- **Base de Datos:** [badge]()
+- **Frontend:** [badge]()
+- **Entorno Virtual:** [badge]()
 
 ---
 
@@ -582,11 +578,11 @@ Permite a las empresas publicar rutas y a los conductores encontrar oportunidade
 ### 1️⃣ Clonar el repositorio y entrar
 
 ```textplain
-git clone https://github.com/Bootcamp-IA-P4/Track-Truck.git
-cd Track-Truck
+git clone https://github.com/tu-API
+cd tu-API
 ```
 
-### 2️⃣ Descarga el entorno virtual:
+### 2️⃣ Descarga el entorno virtual: [Es importante que pongas los distintos sistemas operativos]
 ⚠️ linux/mac
 ```textplain
 python3 -m venv .venv
@@ -633,11 +629,11 @@ python manage.py runserver
 >
 > Swagger UI: http://localhost:8000/docs/
 > 
-> ![docs](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/docs/readme/static/images/docs-swagger-_1_.gif)
+> ![docs]() [Aquí va una imagen o gif]
 > 
 > Redoc UI: http://localhost:8000/redoc/
 > 
->  ![redoc](https://github.com/Bootcamp-IA-P4/Track-Truck/blob/docs/readme/static/images/redoc-swagger-_1_.gif)
+>  ![redoc]() [Aquí va una imagen o gif]
 
 
 ## 🔹 Autenticación
