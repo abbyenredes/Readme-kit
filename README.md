@@ -4,15 +4,15 @@ laborales o colaborativas.
 Preparate para aprender todos mis secretos :stuck_out_tongue_winking_eye:, y sobretodo preparate a documentar tus proyectos (será tu mickey-herramienta secreta) de una manera divertida.
 
 ## Qué te vas a encontrar
-- [Kit básico](#-Kit-básico)
+- [Kit básico](#kit-básico)
  	- <details> <summary>⬇️</summary>
  
-    	- [Tipos de títulos](#-Tipos-de-títulos)
-     	- [Tipos de letra](#-Tipos-de-letra)
-     	- [Tipos de índice](#-Tipos-de-índice)
-     	- [Acerca del proyecto](#-Acerca-del-proyecto)
-     	- [Estado del proyecto](#-Estado-del-proyecto)
-      	- [Checklist](#-Checklist)
+    	- [Tipos de títulos](#tipos-de-títulos)
+     	- [Tipos de letra](#-tipos-de-letras)
+     	- [Tipos de índice](#-tipos-de-índice)
+     	- [Acerca del proyecto](#-acerca-del-proyecto)
+     	- [Estado del proyecto](#-estado-del-proyecto)
+      	- [Checklist](#-checklist)
       	- [CD](#-cd) 
 	 </details> 
 - [Table of contents](#table-of-contents)
@@ -21,14 +21,7 @@ Preparate para aprender todos mis secretos :stuck_out_tongue_winking_eye:, y sob
 - [Contribution](#contribution)
 - [License](#license)
 - [Badges](#badges)
-  - <details> <summary>List of badges</summary>
- 
-     - [Artificial Intelligence and Bots](#-artificial-intelligence-and-bots)
-     - [Blog](#-blog)
-     - [Blockchain](#-blockchain)
-     - [Browsers](#-browsers)
-     - [CD](#-cd)
-       
+      
 ---
 ## Kit básico
 Vamos a dividir nuestra documentación como si de una página web se tratase:
