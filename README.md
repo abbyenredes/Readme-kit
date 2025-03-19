@@ -746,7 +746,7 @@ git commit -m "Añadir nueva funcionalidad"
    
 ----
 
-## 🚀 ¡Gracias por usar Track-Truck! Si tienes preguntas, crea un issue en el repositorio o contáctanos.
+## 🚀 ¡Gracias por usar tu API! Si tienes preguntas, crea un issue en el repositorio o contáctanos.
 
 Te comparto la plantilla:
 
@@ -777,25 +777,20 @@ Te comparto la plantilla:
 
 ## ¿Qué es tu API?
 
-[Describe que hace tu API]
 
 ### 🌟 Características
 
-✅ característica 1
+✅ 
 
-✅  característica 2
+✅  
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-> [!IMPORTANT]
-> 
-> Utiliza badges para hacerlo mas visual te dejo este repositorio que las tiene [markdown-badges](https://github.com/Ileriayo/markdown-badges/blob/master/README.md)
-
-- **Backend:** ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-- **Base de Datos:** ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-- **Frontend:** ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- **Backend:** ![]()
+- **Base de Datos:** ![]()
+- **Frontend:** ![]()
 - **Entorno Virtual:**  `.env` para configuración segura
 
 ---
@@ -809,7 +804,7 @@ git clone https://github.com/tu-API
 cd tu-API
 ```
 
-### 2️⃣ Descarga el entorno virtual: [Es importante que pongas los distintos sistemas operativos]
+### 2️⃣ Descarga el entorno virtual:
 ⚠️ linux/mac
 ```textplain
 python3 -m venv .venv
@@ -856,59 +851,46 @@ python manage.py runserver
 >
 > Swagger UI: http://localhost:8000/docs/
 > 
-> ![docs]() [Aquí va una imagen o gif]
+> ![docs]() 
 > 
 > Redoc UI: http://localhost:8000/redoc/
 > 
->  ![redoc]() [Aquí va una imagen o gif]
+>  ![redoc]()
 
 
 ## 🔹 Uso 1
 ---
-### [Escribe que es: Registro de usuario]
-[Describe que hace: Permite a los usuarios registrarse en la plataforma.]
+### 
 
-Endpoint: [¿Que método usa?: POST /users/signin/]
+Endpoint: 
 
 Parámetros requeridos (Formulario o JSON)
-```json [¿Qué datos necesita para funcionar?]
+```json 
 {
-    "username": "usuario123",
-    "password1": "ContraseñaSegura123",
-    "password2": "ContraseñaSegura123",
-    "email": "usuario@example.com",
-    "user_type": "x" 
+   
 }
 ```
 
-> [!NOTE] [Algo puntual que tener encuenta a la hora de usar tu API]
-> Flujo de redirección: 
+> [!NOTE] 
 > 
-> * Si el usuario se registra como x → Redirige a x:create_x_form
->  
-> * Si el usuario se registra como y → Redirige a y:create_y_form
 
-
-Ejemplo de respuesta (`200 OK`) ✔️ [Para conocer si esta todo correcto]
+Ejemplo de respuesta (` OK`) ✔️ 
 ```json
 {
-    "message": "Usuario registrado correctamente",
-    "redirect": "/x/create/"
+   
 }
 
 ```
 
-Ejemplo de posibles errores: [Para conocer de antemano errores comunes en tu API]
+Ejemplo de posibles errores: 
 
-(`400 Bad Request`) si las contraseñas no coinciden o faltan datos. ❌
+(` Bad Request`) . ❌
 
 ---
-`Todo es igual hasta que llegamos a esta excepción en caso de que no sea tan intuitivo`
 
 ## [Excepción DELETE]
-Borra y del sistema.
 
-Endpoint: DELETE /y/{id}/delete/
+Endpoint: 
 
 Ejemplo de respuesta (`204 No Content`)
 
@@ -918,29 +900,21 @@ Posibles errores `404 Not Found` si y no existe. ❌
 
 ---
 
-### Vistas HTML (Interfaz Web) [Como no retorna nada es una buena práctica describir que pasa aquí]
-1. Crear un y desde formulario
-URL: [create_y_form/<int:user_id>/](y_form/<int:user_id>/)
-Muestra un formulario para registrar y.
+### Vistas HTML (Interfaz Web)
+1. 
+URL:
 
-* Si y se crea correctamente, redirige a home.
-* En caso de error, recarga la página con un mensaje de error.
+* 
+* 
   
-2. Dashboard de y
-URL: [/y/{id}/dr-dashboard/](/y/{id}/dr-dashboard/)
-Muestra los detalles de y.
+2. 
+URL:
 
-3. Actualizar y desde formulario
-URL: [/y/{id}/dr-update/](/y/{id}/dr-update/)
-Formulario para actualizar los datos de y.
-
-* Si la actualización es exitosa, redirige al dashboard de y.
-* Si hay un error, muestra un mensaje en la página.
 
 ![aqui va un gif de tu html]()
 
 > [!NOTE]
-> [Algo relevante sobre esto]
+> 
 
 ---
 
@@ -965,7 +939,11 @@ git commit -m "Añadir nueva funcionalidad"
 4. Envía un pull request 🚀.
    
 ---
-## 🚀 ¡Gracias por usar Track-Truck! Si tienes preguntas, crea un issue en el repositorio o contáctanos.
+## 🚀 ¡Gracias por usar ! Si tienes preguntas, crea un issue en el repositorio o contáctanos.
+````
+----
+También la versión contraida:
+
 ````
 
 Ahora si que hemos llegado al final de esta guía, si hubiera cualquier errata, hazmelo saber.
