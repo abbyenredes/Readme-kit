@@ -944,6 +944,215 @@ git commit -m "Añadir nueva funcionalidad"
 ----
 También la versión contraida:
 
+````textplain
+# Nombre de tu API
+<details>
+  <summary>¿Que voy a encontrarme?</summary>
+  <ol>
+    <li>
+      <a href="#¿Qué-es-?">¿Qué es ?</a>
+      <ul>
+        <li><a href="#Características"> Características</a></li>
+      </ul>
+    </li>
+    <li><a href="#Tecnologías-Utilizadas">Tecnologías Utilizadas</a></li>
+    <li><a href="#Instalación-y-Configuración">Instalación y Configuración</a></li>
+    <li>
+        <a href="#Uso-de-la-API">Uso de la API</a>
+    <ul>
+        <li><a href="#uso 1">uso 1</a></li>
+        <li><a href="#uso 2">uso 2</a></li>
+      </ul>
+    </li>
+     <li><a href="#Contribución">Contribución</a></li>
+  </ol>
+</details>
+
+
+## ¿Qué es ?
+
+
+### 🌟 Características
+
+✅ 
+
+✅  
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Backend:** ![]()
+- **Base de Datos:** ![]()
+- **Frontend:** ![]()
+- **Entorno Virtual:**  `.env` para configuración segura
+
+---
+
+## 🚀 Instalación y Configuración
+
+### 1️⃣ Clonar el repositorio y entrar
+
+```textplain
+git clone https://github.com/tu-API
+cd tu-API
+```
+
+### 2️⃣ Descarga el entorno virtual:
+⚠️ linux/mac
+```textplain
+python3 -m venv .venv
+```
+⚠️ windows
+```texrplain
+python -m venv .venv
+```
+
+### 3️⃣ Inicia el entorno virtual:
+⚠️ linux/mac
+```textplain
+source .venv/bin/activate
+```
+⚠️ windows
+```textplain
+.venv\Scripts\activate
+```
+
+### 4️⃣ Descarga las siguientes dependencias:
+```textplain
+uv pip install -r requirements.txt
+```
+### 5️⃣ Configura variables de entorno
+Crea el archivo .env en la raíz y configura las siguiente variables:
+
+```textplain
+SECRET_KEY="tu_clave_secreta"
+DEBUG=True
+DATABASE_URL="postgres://usuario:contraseña@localhost:5432/nombre_db"
+```
+### 6️⃣ Accede a nuestra API:
+
+```textplain
+python manage.py runserver
+```
+> [!IMPORTANT]
+> La API estará disponible en [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+## 📌 Uso de la API
+---
+> [!NOTE]
+> 
+
+## 🔹 
+---
+### 
+
+Endpoint: 
+
+Parámetros requeridos (Formulario o JSON)
+```json 
+{
+   
+}
+```
+
+> [!NOTE] 
+> 
+
+Ejemplo de respuesta (` OK`) ✔️ 
+```json
+{
+   
+}
+
+```
+
+Ejemplo de posibles errores: 
+
+(` Bad Request`) . ❌
+
+---
+## 🔹 
+---
+### 
+
+Endpoint: 
+
+Parámetros requeridos (Formulario o JSON)
+```json 
+{
+   
+}
+```
+
+> [!NOTE] 
+> 
+
+Ejemplo de respuesta (` OK`) ✔️ 
+```json
+{
+   
+}
+
+```
+
+Ejemplo de posibles errores: 
+
+(` Bad Request`) . ❌
+
+
+## 
+
+Endpoint: 
+
+Ejemplo de respuesta (`204 No Content`)
+
+(No retorna contenido)
+
+Posibles errores `404 Not Found` si y no existe. ❌
+
+---
+
+### Vistas HTML (Interfaz Web)
+1. 
+URL:
+
+* 
+* 
+  
+2. 
+URL:
+
+
+![aqui va un gif de tu html]()
+
+> [!NOTE]
+> 
+
+---
+
+## 🤝 Contribución  
+
+¡Las contribuciones son bienvenidas! Para contribuir:  
+
+1. Haz un fork del repositorio.
+   
+3. Crea una nueva rama:
+    
+   ```sh
+   git checkout -b feature/nueva-funcionalidad
+   ```
+   
+4. Realiza tus cambios y haz commit:
+   
+  ```sh
+git commit -m "Añadir nueva funcionalidad"
+```
+
+4. Envía un pull request 🚀.
+   
+---
+## 🚀 ¡Gracias por usar ! Si tienes preguntas, crea un issue en el repositorio o contáctanos.
 ````
 
 Ahora si que hemos llegado al final de esta guía, si hubiera cualquier errata, hazmelo saber.
